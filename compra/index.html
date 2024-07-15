@@ -39,29 +39,30 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1156955835547428'); // Substitua xxx pelo ID do seu pixel
+        fbq('init', '496838976181061');
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1156955835547428&ev=PageView&noscript=1"
+        src="https://www.facebook.com/tr?id=496838976181061&ev=PageView&noscript=1"
     /></noscript>
     <!-- Fim do Código do Pixel do Facebook -->
 
     <button id="compraButton">Comprar</button>
 
     <script>
+        let conversionValue = 189.85;
         document.getElementById('compraButton').addEventListener('click', function() {
             fbq('track', 'Purchase', {
-                value: 29.85,
+                value: conversionValue,
                 currency: 'BRL'
             }, {
-                eventID: 'unique_event_id',
+                eventID: 'unique_event_id_' + new Date().getTime(),
                 custom_data: {
-                    profitability: 29.85,
+                    profitability: conversionValue,
                     cost_per_purchase: 2.77
                 }
             });
-            alert('Compra registrada com sucesso!');
+            conversionValue += 189.85;
         });
     </script>
 </body>
