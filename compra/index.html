@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página com Botão de Compra</title>
+    <title>Compra</title>
     <style>
         body {
             background-color: black;
@@ -50,11 +50,26 @@
     <button id="compraButton">Comprar</button>
 
     <script>
-        let conversionValue = 189.85;
+        let conversionValue = 187.36;
+        let clickCount = 0;
         document.getElementById('compraButton').addEventListener('click', function() {
+            clickCount++;
+            let purchaseType = 'normal';
+            let purchaseCount = 1;
+            if (clickCount % 5 === 0) {
+                purchaseType = 'unique';
+                purchaseCount = 3;
+            } else if (clickCount % 3 === 0) {
+                purchaseType = 'normal';
+                purchaseCount = 5;
+            }
+            
             fbq('track', 'Purchase', {
                 value: conversionValue,
-                currency: 'BRL'
+                currency: 'BRL',
+                purchase_type: purchaseType,
+                purchase_count: purchaseCount,
+                roi: 5  // Simulated ROI value
             }, {
                 eventID: 'unique_event_id_' + new Date().getTime(),
                 custom_data: {
@@ -62,7 +77,7 @@
                     cost_per_purchase: 2.77
                 }
             });
-            conversionValue += 189.85;
+            conversionValue += 187.36;
         });
     </script>
 </body>
