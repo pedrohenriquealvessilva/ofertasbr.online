@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - D24</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        header img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        input[type="email"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: #0a75bc; /* cor da logo */
+            color: #fff;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            cursor: pointer;
+        }
+        input::placeholder {
+            color: #fff; /* cor do texto dentro dos campos de entrada */
+        }
+    </style>
+</head><br><br><br><br><br><br><br><br><br><br>
+<body>
+    <header>
+        <img src="https://i.ibb.co/w6FVDvT/LOGO.png" alt="Logotipo">
+    </header>
+    <form id="loginForm" onsubmit="return validateForm()">
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="password" id="password" name="password" placeholder="Senha" required>
+        <input type="submit" value="Entrar">
+    </form>
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Verificar se o email é válido e a senha está correta
+            if (email.indexOf('@') == -1 || password !== "asdad") {
+                alert("Por favor, insira um email válido e a senha correta.");
+                return false;
+            }
+
+            // Redirecionar após o login bem-sucedido
+            window.location.href = "https://google.com";
+            return false;
+        }
+    </script>
+</body>
+</html>
