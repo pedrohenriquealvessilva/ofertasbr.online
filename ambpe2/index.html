@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Membros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #000000; /* Fundo da página preto */
+            color: #ffffff;
+        }
+
+        .main {
+            padding: 0;
+        }
+
+        .cover-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .modules-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .modules {
+            display: flex;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+        }
+
+        .module {
+            margin: 10px;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+            width: 300px;
+        }
+
+        .module img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .module a {
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .module a.module-link {
+            background-color: #e50914; /* Botão vermelho */
+        }
+
+        .module a.module-link:hover {
+            background-color: #f40612;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .module {
+                width: 200px;
+            }
+
+            .arrow {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="main">
+        <img src="https://i.ibb.co/PtBZvBp/a.png" alt="Imagem de Capa" class="cover-image">
+        <div class="modules-container">
+            <button class="arrow left" onclick="scrollModules(-1)">&#9664;</button>
+            <section class="modules">
+                <!-- Os módulos serão carregados aqui dinamicamente -->
+            </section>
+            <button class="arrow right" onclick="scrollModules(1)">&#9654;</button>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modules = [
+                {
+                    title: 'Módulo 1',
+                    image: 'https://i.ibb.co/7KYd1LG/introducao.png',
+                    link: 'https://foirevelado.online/intorducao--desafio24dias.pdf'
+                },
+                {
+                    title: 'Módulo 2',
+                    image: 'https://i.ibb.co/wRNNJhh/02.png',
+                    link: 'https://foirevelado.online/o-metodo---desafio24dias.pdf'
+                },
+                {
+                    title: 'Módulo 3',
+                    image: 'https://i.ibb.co/8Nyz8j8/03.png',
+                    link: 'https://foirevelado.online/receitas24d'
+                },
+                {
+                    title: 'Módulo 4',
+                    image: 'https://i.ibb.co/gPR7T1V/04.png',
+                    link: 'https://foirevelado.online/lista-de--compras---desafio24dias.pdf'
+                },
+                {
+                    title: 'Módulo 5',
+                    image: 'https://i.ibb.co/C1yg0PQ/05.png',
+                    link: 'https://foirevelado.online/eliminar-afla---cidez.pdf'
+                },
+                {
+                    title: 'Módulo 6',
+                    image: 'https://i.ibb.co/Qd8LBbc/06.png',
+                    link: 'https://foirevelado.online/comidaspara--apimentara-vida-s.pdf'
+                },
+                {
+                    title: 'Módulo 7',
+                    image: 'https://i.ibb.co/2PWgCCJ/07.png',
+                    link: 'https://foirevelado.online/pelejovem--ds24d.pdf'
+                },
+                {
+                    title: 'Módulo 8',
+                    image: 'https://i.ibb.co/Pc5SmQR/08.png',
+                    link: 'https://foirevelado.online/guia--detox---instantaneo----desafio24dias.pdf'
+                },
+                {
+                    title: 'Módulo 9',
+                    image: 'https://i.ibb.co/3d4BszR/09.png',
+                    link: 'https://foirevelado.online/chas--para---controlaro---acucar.pdf'
+                },
+                {
+                    title: 'Módulo 10',
+                    image: 'https://i.ibb.co/TcY4KFR/10.png',
+                    link: 'https://foirevelado.online/desbloquearame--lhorversao.pdf'
+                }
+            ];
+
+            const modulesContainer = document.querySelector('.modules');
+
+            modules.forEach(module => {
+                const moduleElement = document.createElement('div');
+                moduleElement.classList.add('module');
+
+                moduleElement.innerHTML = `
+                    <a href="${module.link}">
+                        <img src="${module.image}" alt="Capa do ${module.title}">
+                    </a>
+                    <a href="${module.link}" class="module-link">Clique para acessar</a>
+                `;
+
+                modulesContainer.appendChild(moduleElement);
+            });
+        });
+
+        function scrollModules(direction) {
+            const modulesContainer = document.querySelector('.modules');
+            const scrollAmount = direction * 300; // ajusta a quantidade de scroll conforme necessário
+            modulesContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
