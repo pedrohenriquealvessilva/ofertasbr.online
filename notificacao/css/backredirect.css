@@ -1,0 +1,110 @@
+/* Estilo geral do corpo */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F3EBE8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilo do header */
+.header {
+    background-color: #F3EBE8;
+    padding: 12px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo do header */
+.logo {
+    width: 75px;
+}
+
+/* Estilo da Ć�rea principal */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    top: 0;
+    z-index: 2;
+}
+
+/* Estilo da caixa centralizada */
+.warning-box {
+    background: #121212; /* Cor da caixa conforme o exemplo fornecido */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    color: white; /* Texto branco para contraste */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteĆŗdo dentro do box */
+}
+
+/* Estilo do alerta em vermelho */
+.alert {
+    background-color: #FF0000;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Estilo para a seĆ§Ć£o de cautela */
+.caution h2 {
+    color: yellow;
+    margin-bottom: 10px;
+}
+
+.caution p {
+    font-size: 16px; /* Aumenta o tamanho da fonte para melhor legibilidade */
+    margin: 10px 0;
+    line-height: 1.5; /* Melhora o espaĆ§amento entre as linhas */
+}
+
+/* Estilo do botĆ£o de chamada para aĆ§Ć£o */
+.cta-button {
+    display: block;
+    width: calc(100% - 40px); /* Ajusta o botĆ£o para caber perfeitamente dentro do box */
+    max-width: 360px; /* MantĆ©m o botĆ£o alinhado dentro do box */
+    padding: 15px 20px;
+    margin: 20px auto 0 auto; /* Centraliza o botĆ£o horizontalmente */
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #F54C5C;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    line-height: 1.4;
+}
+
+/* AnimaĆ§Ć£o de pulsaĆ§Ć£o para o botĆ£o */
+.cta-button:hover {
+    background-color: #45A049;
+}
+
+/* Estilo do footer */
+.footer {
+    background-color: #F3EBE8;
+    color: #333;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+/* Logo do footer */
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
